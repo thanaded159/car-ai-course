@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>คอร์สออนไลน์ | วิจัยชั้นเรียนเปลี่ยนชีวิต ติดปีกด้วย AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="overlay" id="overlay" onclick="closeSide()"></div>
+  <div class="app">
+    <aside class="sidebar" id="side">
+      <div class="brand">
+        <div class="brand-kicker">Classroom Action Research</div>
+        <h1>วิจัยชั้นเรียน<br>ติดปีกด้วย AI</h1>
+        <p>คอร์สปฏิบัติการ 6 โมดูล สำหรับครู</p>
+      </div>
+
+      <div class="nav-label">ภาพรวม</div>
+      <button class="nav-btn" data-route="home" onclick="go('#/home')"><span class="nav-num">⌂</span> หน้าหลัก</button>
+      <button class="nav-btn" data-route="about" onclick="go('#/about')"><span class="nav-num">i</span> เกี่ยวกับคอร์ส</button>
+
+      <div class="nav-label">บทเรียน</div>
+      <button class="nav-btn" data-route="module" data-id="1" onclick="go('#/module/1')"><span class="nav-num">1</span> ปลดล็อกโจทย์วิจัย<span class="done-dot"></span></button>
+      <button class="nav-btn" data-route="module" data-id="2" onclick="go('#/module/2')"><span class="nav-num">2</span> วงจร PAOR<span class="done-dot"></span></button>
+      <button class="nav-btn" data-route="module" data-id="3" onclick="go('#/module/3')"><span class="nav-num">3</span> นวัตกรรม + CAR<span class="done-dot"></span></button>
+      <button class="nav-btn" data-route="module" data-id="4" onclick="go('#/module/4')"><span class="nav-num">4</span> ข้อมูลและสถิติ<span class="done-dot"></span></button>
+      <button class="nav-btn" data-route="module" data-id="5" onclick="go('#/module/5')"><span class="nav-num">5</span> Best Practice<span class="done-dot"></span></button>
+      <button class="nav-btn" data-route="module" data-id="6" onclick="go('#/module/6')"><span class="nav-num">6</span> Show & Share<span class="done-dot"></span></button>
+
+      <div class="nav-label">เครื่องมือ</div>
+      <button class="nav-btn" data-route="prompts" onclick="go('#/prompts')"><span class="nav-num">P</span> คลัง Prompt</button>
+      <button class="nav-btn" data-route="workbook" onclick="go('#/workbook')"><span class="nav-num">W</span> ใบงานของฉัน</button>
+      <button class="nav-btn" data-route="plan" onclick="go('#/plan')"><span class="nav-num">30</span> แผน 30 วัน</button>
+
+      <div class="progress-card">
+        <strong>ความคืบหน้า</strong>
+        <div class="bar"><i id="prog-bar"></i></div>
+        <span id="prog-label">0 / 6 โมดูล</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <button class="menu-toggle" onclick="openSide()">เมนู</button>
+          <div class="crumb" id="crumb">หน้าหลัก</div>
+        </div>
+        <div class="top-actions">
+          <button class="btn ghost" onclick="go('#/prompts')">คลัง Prompt</button>
+          <button class="btn teal" onclick="go('#/module/1')">เริ่มโมดูล 1</button>
+        </div>
+      </div>
+      <div id="view"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
